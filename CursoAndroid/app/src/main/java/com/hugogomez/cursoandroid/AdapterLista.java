@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 /**
@@ -52,10 +54,12 @@ public class AdapterLista extends BaseAdapter {
 
         nombre.setText(selecciona.getNombre());
 
+        Glide.with(context).load(selecciona.getUrlImaPok()).into(ima);
+        /*
         ima.setScaleType(ImageView.ScaleType.CENTER_CROP);
         ima.setPadding(1,1,1,1);
         ima.setImageResource(selecciona.getUrlImagen());
-
+        */
         return v;
     }
 }

@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 /**
  * Created by hugo on 23/06/17.
  */
@@ -18,6 +20,7 @@ public class DetallePokemon extends Activity {
     private ImageView imagen;
     private TextView txtDescripcion;
     private String urlVideo;
+    private String urlImaPok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class DetallePokemon extends Activity {
         imagen = (ImageView) findViewById(R.id.ima_detalle);
         txtDescripcion = (TextView) findViewById(R.id.txt_det_descripcion);
         urlVideo = "";
+        urlImaPok="";
 
         //obtener valores del pokemon presionado
         Bundle bd = getIntent().getExtras();
@@ -37,10 +41,16 @@ public class DetallePokemon extends Activity {
             String nombre = (String) bd.get("nombre");
             txNom.setText(nombre);
 
+            urlImaPok = (String) bd.get("urlIma");
+
+            Glide.with(this).load(urlImaPok).into(imagen);
+
+            /**
             Integer idIma = (Integer) bd.get("imagen");
             imagen.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imagen.setPadding(1,1,1,1);
             imagen.setImageResource(idIma);
+             */
 
             String descipcion = (String) bd.get("descripcion");
             txtDescripcion.setText(descipcion);

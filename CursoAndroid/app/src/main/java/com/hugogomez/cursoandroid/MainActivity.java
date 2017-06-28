@@ -36,26 +36,18 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean revisaContrasena(){
 
-        ed =(EditText) findViewById(R.id.etNombre);
-        String nom = ed.getText().toString();
 
-        ed1 = (EditText) findViewById(R.id.etContra);
+        ed1 = (EditText) findViewById(R.id.contra_id);
         String con = ed1.getText().toString();
 
-
-        if(nom.equals(nombre) && contra.equals(con)){
-
+        if(con.length()>=6){
             return true;
-
-        }else if(con.length()<=6){
-
-            Toast t = Toast.makeText(getApplicationContext(), "Contraseña demasido corta", Toast.LENGTH_SHORT);
+        }else{
+            Toast t = Toast.makeText(getApplicationContext(), "Contraseña minimo 6 caracteres", Toast.LENGTH_SHORT);
 
             t.show();
 
             return false;
-
         }
-        return  false;
     }
 }

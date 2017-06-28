@@ -13,16 +13,26 @@ public class Pokemon implements Serializable {
     private String urlVideo;
     private Integer urlImagen;
     private String descripcion;
+    private String urlImaPok;
 
-    public Pokemon(String nombre, String tipo, String urlVideo, Integer urlImagen, String descripcion) {
+    public Pokemon(String nombre, String tipo, String urlVideo, Integer urlImagen, String descripcion, String urlImaPok) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.urlVideo = urlVideo;
         this.urlImagen = urlImagen;
         this.descripcion=descripcion;
+        this.urlImaPok=urlImaPok;
     }
 
     public Pokemon(){}
+
+    public String getUrlImaPok() {
+        return urlImaPok;
+    }
+
+    public void setUrlImaPok(String urlImaPok) {
+        this.urlImaPok = urlImaPok;
+    }
 
     public String getNombre() {
         return nombre;

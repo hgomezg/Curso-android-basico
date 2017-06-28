@@ -2,17 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="#000000">
+    
     <TextView
         android:id="@+id/txt_nom"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"/>
 
-    <ImageView
-        android:id="@+id/ima_pok"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp" >
+
+        <ImageView
+            android:id="@+id/ima_pok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
 </LinearLayout>
